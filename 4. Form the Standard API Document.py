@@ -63,7 +63,7 @@ def get_valid_sheet_name(entity_name):
     return sheet_name
 
 def update_api_templates():
-    INTEGRATION_FILE = os.path.join(SCRIPT_DIR, "DiDi SF New Hire IntegrationV1.xlsx")
+    INTEGRATION_FILE = os.path.join(SCRIPT_DIR, "SF New Hire IntegrationV1.xlsx")
     integration_wb = openpyxl.load_workbook(INTEGRATION_FILE)
     table_ws = integration_wb["SF Master Table List"]
     template_ws = integration_wb["API Template"]
@@ -181,7 +181,7 @@ def main():
     out_wb.save(OUTPUT_FILE)
     print(f"Preview exported to {OUTPUT_FILE}")
 
-    INTEGRATION_FILE = os.path.join(SCRIPT_DIR, "DiDi SF New Hire IntegrationV1.xlsx")
+    INTEGRATION_FILE = os.path.join(SCRIPT_DIR, "SF New Hire IntegrationV1.xlsx")
     integration_wb = openpyxl.load_workbook(INTEGRATION_FILE, data_only=True)
     integration_ws = integration_wb["SF Master Table List"]
 
@@ -260,7 +260,7 @@ def post_valid_bodies_and_export_response():
         response_col = headers.index("API Response") + 1
 
     # Open integration workbook and get SF Master Table List
-    INTEGRATION_FILE = os.path.join(SCRIPT_DIR, "DiDi SF New Hire IntegrationV1.xlsx")
+    INTEGRATION_FILE = os.path.join(SCRIPT_DIR, "SF New Hire IntegrationV1.xlsx")
     integration_wb = openpyxl.load_workbook(INTEGRATION_FILE, data_only=True)
     integration_ws = integration_wb["SF Master Table List"]
     integration_headers = [cell.value for cell in integration_ws[1]]
